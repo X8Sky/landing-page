@@ -10,6 +10,10 @@
 
 
 /* ---- Base Rules ---- */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: rgb(136,203,171);
     background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
@@ -23,7 +27,7 @@ body {
 h1 {
     font-family: 'Fira Sans', sans-serif;
     font-size: 3em;
-    margin: 2em 1rem;
+    margin: 3em 1rem 2rem;
 }
 
 @media only screen and (min-width: 35em){
@@ -58,6 +62,7 @@ main {
 section {
     position: relative;
     min-height: 80vh;
+    padding-top: 5rem;
 }
 
 
@@ -67,22 +72,21 @@ section {
 .navbar__menu ul {
     padding-left: 0;
     margin: 0;
-    text-align: right;
+    text-align: center;
+    flex-direction: row;
 }
 
-.navbar__menu li {
-    display: inline-block;
+.navbar__menu .navbar-brand {
+    line-height: 46px;
 }
 
-.navbar__menu .menu__link {
-    display: block;
+.navbar__menu .nav-link  {
     padding: 1em;
-    font-weight: bold;
     text-decoration: none;
     color: #000;
 }
 
-.navbar__menu .menu__link:hover {
+.navbar__menu .nav-link:hover {
     background: #333;
     color: #fff;
     transition: ease 0.3s all;
@@ -192,18 +196,17 @@ section:nth-of-type(3n + 1) .landing__container::after {
 
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
-/* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
-section.your-active-class {
+section.active {
     background: rgb(0, 0, 0);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
-section.your-active-class .landing__container::before {
+section.active .landing__container::before {
     opacity: 1;
     animation: rotate 4s linear 0s infinite forwards;
 }
 
-section.your-active-class .landing__container::after {
+section.active .landing__container::after {
     opacity: 1;
     animation: rotate 5s linear 0s infinite forwards reverse;
 }

@@ -18,6 +18,9 @@
  * 
 */
 
+const pageHeader = document.querySelector('.page__header');
+const navbarMenu = document.querySelector('.navbar__menu');
+const navbarList = document.querySelector('#navbar__list');
 
 /**
  * End Global Variables
@@ -35,12 +38,18 @@
 
 // build the nav
 
-
-// Add class 'active' to section when near top of viewport
-
+navbarMenu.classList.add('navbar', 'navbar-dark', 'bg-dark', 'justify-content-center', 'justify-content-sm-between', 'px-3', 'py-0');
+// insert page brand
+navbarMenu.insertAdjacentHTML('afterbegin', `<a class="navbar-brand" href="/">Landing Page</a>  `)
 
 // Scroll to anchor ID using scrollTO event
 
+// Build menu 
+
+navbarList.classList.add('navbar-nav');
+navbarList.innerHTML=`<a class="nav-link" href="#section1">section 1</a>
+<a class="nav-link" href="#section2">section 2</a>
+<a class="nav-link" href="#section3">section 3</a>`;
 
 /**
  * End Main Functions
@@ -48,10 +57,18 @@
  * 
 */
 
-// Build menu 
-
 // Scroll to section on link click
+
+// css scroll-behavior: smooth; did the trick
 
 // Set sections as active
 
+window.addEventListener('activate.bs.scrollspy', function (e) {
+  const activeLink = navbarList.querySelector('.nav-link.active');
+  const activeSection = activeLink.getAttribute('href');
+  //remove previous active section class
+  document.querySelector('section.active')?.classList.remove('active')
+  //add active class to new section
+  document.querySelector(activeSection).classList.add('active')
+});
 
