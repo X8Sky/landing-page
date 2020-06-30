@@ -40,7 +40,7 @@ const navbarList = document.querySelector('#navbar__list');
 
 navbarMenu.classList.add('navbar', 'navbar-dark', 'bg-dark', 'justify-content-center', 'justify-content-sm-between', 'px-3', 'py-0');
 // insert page brand
-navbarMenu.insertAdjacentHTML('afterbegin', `<a class="navbar-brand" href="/">Landing Page</a>`)
+navbarMenu.insertAdjacentHTML('afterbegin', `<a class="navbar-brand" href="">Landing Page</a>`)
 
 // Scroll to anchor ID using scrollTO event
 
