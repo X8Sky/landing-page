@@ -40,7 +40,7 @@ const navbarList = document.querySelector('#navbar__list');
 
 navbarMenu.classList.add('navbar', 'navbar-dark', 'bg-dark', 'justify-content-center', 'justify-content-sm-between', 'px-3', 'py-0');
 // insert page brand
-navbarMenu.insertAdjacentHTML('afterbegin',`<a class="navbar-brand" href="/">Landing Page</a>` )
+navbarMenu.insertAdjacentHTML('afterbegin', `<a class="navbar-brand" href="/">Landing Page</a>`)
 
 // Scroll to anchor ID using scrollTO event
 
@@ -48,7 +48,7 @@ navbarMenu.insertAdjacentHTML('afterbegin',`<a class="navbar-brand" href="/">Lan
 
 navbarList.classList.add('navbar-nav');
 const links = Array.from(document.getElementsByTagName("section")).map(section => {
-return `<li class="nav-item"><a class="nav-link" href="#${section.id}">${section.dataset.nav}</a></li>`
+  return `<li class="nav-item"><a class="nav-link" href="#${section.id}">${section.dataset.nav}</a></li>`
 })
 navbarList.insertAdjacentHTML('afterbegin', links.join(' '));
 
